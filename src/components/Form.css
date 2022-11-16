@@ -1,0 +1,19 @@
+
+.form {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction:column ;
+   
+}
+
+p {
+    font-size: 2rem;
+    margin-top: 2rem;
+    font-weight: 900;
+}
+
+button {
+    align-self: center;
+}
+
