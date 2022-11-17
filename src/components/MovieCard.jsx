@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import './movieCard.css'
 
 
+
 export default function MovieCard({title, type, posterUrl}) {
   return (
    
@@ -16,11 +17,13 @@ export default function MovieCard({title, type, posterUrl}) {
     <div className='movie-card'>
     <img src={posterUrl} alt={title}/> 
      <div className='card-body'>
-    <h3>{title}</h3> 
+    <h3 className="title">{title}</h3>
+    </div>
+    <div className="buttonBox">
     <button className="mvBtn">Movie</button> 
     </div>
-   
     </div>
+    
     </div>
    
   )

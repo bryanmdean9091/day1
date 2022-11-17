@@ -81,6 +81,6 @@ export default function Form(props) {
 }
 
 Form.propTypes = {
-  setRequestTitle: PropTypes.func,
+  setSearchTerm: PropTypes.func,
 };
 

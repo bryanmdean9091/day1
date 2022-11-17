@@ -7,6 +7,24 @@ p {
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+ 
+}
+
+.loadingBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  height: 15rem;
+  width: 15rem;
+  background-image: url('./components/images/loading.gif');
+  background-size: cover;
+
+}
 
 
 
