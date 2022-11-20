@@ -1,55 +1,49 @@
-// import React from 'react';
-// import  {getMoviesByName} from '../Utils'
-// import './movieCard.css';
-// import {setMovieName} from './Movies'
-// import Movies from './Movies';
-
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
-import './movieCard.css'
+import "./movieCard.css";
+import { getMovieById } from "../Utils";
 
+// export default function MovieCard({
+//   title,
+//   posterUrl,
+//   movieId,
+//   handleGetMovieById,
+//   setOpen,
+// }) {
+//   const handleClick = () => {
+//     handleGetMovieById(movieId);
+//     console.log(movieId);
+//     setOpen(true);
+//   };
 
+export default function MovieCard(props) {
+  const { title, type, posterUrl, imdbID, setModalMovie } = props;
 
-export default function MovieCard({title, type, posterUrl}) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const toggleModal = () => {
+    // setModal(true);
+    // setIsLoading(true);
+    getMovieById(imdbID);
+  };
   return (
-   
-    <div className='container'> 
-    <div className='movie-card'>
-    <img src={posterUrl} alt={title}/> 
-     <div className='card-body'>
-    <h3 className="title">{title}</h3>
+    <div className="container">
+      <div className="movie-card">
+        <img src={posterUrl} alt={title} />
+        <div className="card-body">
+          <h3 className="title">{title}</h3>
+        </div>
+        <div className="buttonBox">
+          <button className="mvBtn" onClick={toggleModal}>
+            Movie
+          </button>
+        </div>
+      </div>
     </div>
-    <div className="buttonBox">
-    <button className="mvBtn">Movie</button> 
-    </div>
-    </div>
-    
-    </div>
-   
-  )
-};
-
+  );
+}
 
 MovieCard.propTypes = {
   title: PropTypes.string,
   posterUrl: PropTypes.string,
 };
-
-// MovieCard.defaultProps = {
-//   title: '',
-// };
-
-// import React from 'react';
-// import './movieCard.css';
-
-// export default function MovieCard({ title, type, posterUrl }) {
-//   return (
-//     <div className="movie-card">
-//       <img src="#" alt="Batman" />
-//       <div className="card-body">
-//         <h3>Batman v Something</h3>
-//       </div>
-//       <button>Movie</button>
-//     </div>
-//   );
-// }

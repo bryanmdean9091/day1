@@ -6,6 +6,7 @@ import { MovieDetails } from './MovieDetails';
 export default function Movies() {
     const [movies, setMovies] = useState([]);
     const [movieName, setMovieName] = useState('');
+    const [setOpen, handleGetMovieById] = useState('')
 
 async function getMovies() {
     try {
@@ -49,6 +50,9 @@ return (
             plot={movie.Plot}
             actors={movie.Actors}
             rated={movie.Rated}
+              movieId={movie.imdbID}
+            handleGetMovieById={handleGetMovieById}
+            setOpen={setOpen}
           />
         ))}
       </div>
